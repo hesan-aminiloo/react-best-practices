@@ -34,3 +34,9 @@ This is a list of best practices and nice to know things for react or react nati
   * [Server Side Rendering](#ssr)
   * [Testing](#testing)
   * [Build and Deployment](#building)
+
+:white_medium_square: Todos:
+============================
+- [x] ~~Create table of contents~~
+- [ ] Code snippets
+- [ ] Code screenshots
