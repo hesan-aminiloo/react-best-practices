@@ -3,7 +3,7 @@ This is a list of best practices and nice to know things for react or react nati
 
 > **Note**: These are all opinionated practices and may change over time. So make sure to watch this repo.
 
-## Table of Contents
+## :book: Table of Contents
 
   1. [File and Folder Structure](#folder-and-files)
     1. [Feature Based](#folder-feature-based)
