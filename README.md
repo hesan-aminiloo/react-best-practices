@@ -5,10 +5,11 @@ This is a list of best practices and nice to know things for react or react nati
 
 ## :book: Table of Contents
 
+  * [Necessary Tools](#required-tools)
+  * [Necessary Libraries](#required-libs)
   * [File and Folder Structure](#folder-and-files)
     * [Type Based](#folder-type-based)
     * [Feature Based](#folder-feature-based)
-  * [Necessary Libraries](#required-libs)
     * [Axios](#libs-axios)
     * [ESLint](#libs-eslint)
     * [Moment](#libs-moment)
@@ -35,6 +36,49 @@ This is a list of best practices and nice to know things for react or react nati
   * [Server Side Rendering](#ssr)
   * [Testing](#testing)
   * [Build and Deployment](#building)
+
+
+## Necessary Tools
+<a name="required-tools"></a>
+Here's a list of tools and extensions that are useful when you're working on a React project.
+
+:pencil: **FEEL FREE TO CREATE A PR AND COMPLETE THIS LIST**
+
+  - [React Developer Tools](https://reactjs.org/blog/2019/08/15/new-react-devtools.html)
+  > Used to debug and inspect your whole react application in the browser.
+  - [**VSCode extensions**](https://code.visualstudio.com/)
+    - [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+    > This extenstion is used to highlight linter issues in your code editor.
+    - [Path Intellisense](https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense)
+    > Autocomplete path addresses
+    - [Turbo Console Log](https://marketplace.visualstudio.com/items?itemName=ChakrounAnas.turbo-console-log)
+    > This is one of my favorites! Put console logs in your code with no effort.
+    - [vscode-styled-components](https://marketplace.visualstudio.com/items?itemName=jpoissonnier.vscode-styled-components)
+    > When your using `styled-components` with react, this extention helps you to highlight scss/css syntax.
+    - [Gitlens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens)
+    > Gitlens is a good tool to work with git in your project.
+    - [Bookmarks](https://marketplace.visualstudio.com/items?itemName=alefragnani.Bookmarks)
+    > Bookmark your codes and jump into them. Perfect tool for debugging.
+    - [Bracket Pair Colorizer](https://marketplace.visualstudio.com/items?itemName=CoenraadS.bracket-pair-colorizer)
+    > Colorize the brackets and parentheses.
+    - [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)
+    > Start a live server locally with one click.
+
+## Necessary Libraries
+<a name="required-libs"></a>
+There are hundreds of useful libraries for javascript and react. I didn't want to list all these libs, I just want to list the useful ones that every project needs them.
+
+:pencil: **FEEL FREE TO CREATE A PR AND COMPLETE THIS LIST**
+
+| Lib                                                                               | Description                                  | install                     |
+|-----------------------------------------------------------------------------------|----------------------------------------------|-----------------------------|
+| [Axios](https://github.com/axios/axios)                                           | Communicate to server                        | `yarn add axios`            |
+| [React Router Dom](https://reacttraining.com/react-router/web/guides/quick-start) | Navigation and routing for React             | `yarn add react-router-dom` |
+| [ESLint](https://thomlom.dev/setup-eslint-prettier-react/)                        | Lint your code to have a better handwriting. | `yarn add eslint`           |
+| [Moment](https://momentjs.com/)                                                   | Best tool to work with time.                 | `yarn add moment`           |
+| [Redux](https://redux.js.org/)                                                    | State management.                            | `yarn add redux`            |
+| [React Redux](https://react-redux.js.org/)                                        | Official React bindings for Redux            | `yarn add react-redux`      |
+
 
 
 ## File and Folder Structure
@@ -90,31 +134,32 @@ Based on what [React](https://reactjs.org/docs/faq-structure.html) says, we have
   /**
     src/
     |   Pages/
-    |   |   Pages/
-    |   |   |   Cart/
-    |   |   |   |   Components/
-    |   |   |   |   |   cartItem.js
-    |   |   |   |   |   cartHeader.js
-    |   |   |   |   |   cartFooter.js
-    |   |   |   |   Helpers/
-    |   |   |   |   |   index.js <- cartHelpers.js in previous example
-    |   |   |   |   Redux/
-    |   |   |   |   |   cartActions.js
-    |   |   |   |   |   cartConsts.js
-    |   |   |   |   |   cartReducers.js
-    |   |   |   |   |   cartStore.js
-    |   |   |   |   |   index.js <- Here you import all other things (reducers, actions, etc.)
-    |   |   |   |   Cart.js
-    |   |   |   |   index.js
+    |   |   Cart/
+    |   |   |   Components/
+    |   |   |   |   cartItem.js
+    |   |   |   |   cartHeader.js
+    |   |   |   |   cartFooter.js
+    |   |   |   Helpers/
+    |   |   |   |   index.js <- cartHelpers.js in previous example
+    |   |   |   Redux/
+    |   |   |   |   cartActions.js
+    |   |   |   |   cartConsts.js
+    |   |   |   |   cartReducers.js
+    |   |   |   |   cartStore.js
+    |   |   |   |   index.js <- Here you import all other things (reducers, actions, etc.)
+    |   |   |   Cart.js
+    |   |   |   index.js
     |   |   |   ...
-    |   |   |   Product/
-    |   |   |   |   ... <- Like Cart
-    |     ...
+    |   |   Product/
+    |   |   |   ... <- Like Cart
+    |   |   ... (Other pages)
+    ...
   */
   ```
 
 
-:heavy_exclamation_mark: **My Advice** Althouth it's more about what you want to do but I found the [feature based](#folder-feature-based) more useful.
+:heavy_exclamation_mark: **My Advice:** Althouth it's more about what you want to do but I found the [feature based](#folder-feature-based) more useful.
+
 
 ## :white_medium_square: Todos:
 - [x] ~~Create table of contents~~
