@@ -162,6 +162,7 @@ Based on what [React](https://reactjs.org/docs/faq-structure.html) says, we have
   ```javascript
   import React from 'react';
 
+  // Functional Component
   const Button = () => (
     <button>
       You can click me!
@@ -170,6 +171,7 @@ Based on what [React](https://reactjs.org/docs/faq-structure.html) says, we have
 
   // or
 
+  // Class Component
   class Button extends React.Component {
     render(){
       return (
