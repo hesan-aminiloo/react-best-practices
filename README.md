@@ -5,21 +5,21 @@ This is a list of best practices and nice to know things for react or react nati
 
 ## :book: Table of Contents
 
-  * [Necessary Tools](#required-tools)
-  * [Necessary Libraries](#required-libs)
+  * [Tools](#required-tools)
+  * [Noticeable Libraries](#required-libs)
   * [File and Folder Structure](#folder-and-files)
     * [Type Based](#folder-type-based)
     * [Feature Based](#folder-feature-based)
-  * [Code Style](#code-style)
-  * [Hooks](#hooks)
-  * [Git](#git)
-  * [Support Multi-lang](#multi-lang)
-  * [Accessibility](#accessibility)
   * [Components](#components)
     * [Naming](#naming)
     * [Functional Components](#functional-components)
     * [Class Components](#class-components)
     * [Higher-Order Components](#class-hoc)
+  * [Code Style](#code-style)
+  * [Hooks](#hooks)
+  * [Git](#git)
+  * [Support Multi-lang](#multi-lang)
+  * [Accessibility](#accessibility)
   * [Styling](#component-stylings)
     * [SCSS](#styling-scss)
     * [styled-components](#styling-styled-component)
@@ -32,7 +32,7 @@ This is a list of best practices and nice to know things for react or react nati
   * [Build and Deployment](#building)
 
 
-## Necessary Tools
+## Tools
 <a name="required-tools"></a>
 Here's a list of tools and extensions that are useful when you're working on a React project.
 
@@ -58,7 +58,7 @@ Here's a list of tools and extensions that are useful when you're working on a R
     - [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)
     > Start a live server locally with one click.
 
-## Necessary Libraries
+## Noticeable Libraries
 <a name="required-libs"></a>
 There are hundreds of useful libraries for javascript and react. I didn't want to list all these libs, I just want to list the useful ones that every project needs them.
 
@@ -154,6 +154,94 @@ Based on what [React](https://reactjs.org/docs/faq-structure.html) says, we have
 
 :heavy_exclamation_mark: **My Advice:** Althouth it's more about what you want to do but I found the [feature based](#folder-feature-based) more useful.
 
+
+## Components
+<a name="components"></a>
+
+  [Create more components](https://reactjs.org/blog/2015/12/18/react-components-elements-and-instances.html#summary)
+  ```javascript
+  import React from 'react';
+
+  const Button = () => (
+    <button>
+      You can click me!
+    </button>
+  );
+
+  // or
+
+  class Button extends React.Component {
+    render(){
+      return (
+        <button>
+          Or click me!
+        </button>
+      );
+    }
+  }
+  ```
+
+  **WHY?**  It's cheap to create a new component in react as they are plain javascript objects. Creating more components gives you the ability to reuse your logic and codes easier and avoid repetetive code in your application. It also makes it easier to change or modify your code. Imagine you want to change the color of all buttons in your application, the only place to change is one component instead of every button in your application.
+
+  **NOTE:** Creating components in react is cheap, so try to use them a lot.
+  <br/>
+  <br/>
+
+  [Use Functional Components](https://medium.com/@Zwenza/functional-vs-class-components-in-react-231e3fbd7108)
+  ```javascript
+  import React from 'react';
+
+  /**
+   * Meh... not bad
+   */
+  class Navigation extends React.Component {
+    constructor(props) {
+      super(props);
+    }
+
+    render(){
+      const { items } = this.props;
+
+      return (
+        <ul>
+          {
+            items.map(item => (
+              <li>
+                <a href={item.href}>{item.label}</a>
+              </li>
+            ))
+          }
+        </ul>
+      );
+    }
+  }
+
+
+  /**
+   * So Much Better!
+   */
+  const Navigation = ({ items }) => (
+    <ul>
+      {
+        items.map(item => (
+          <li>
+            <a href={item.href}>{item.label}</a>
+          </li>
+        ))
+      }
+    <ul>
+  );
+
+  ```
+
+  **WHY?**  Functional components are **easy to read** and understand. They are **more testable** since they are just a simple function and even if you want them to have state or lifecycles there would be no problem cause we have react hooks now! Also they have a slightly [better performance](https://reactjs.org/blog/2015/10/07/react-v0.14.html#stateless-functional-components) comparing to class-components.
+
+  **NOTE:** With functional components you'll end up having **Less Code**, **More Testable Application** and **Easier to Read Logic**.
+  <br/>
+  <br/>
+
+  [Make reusable components](https://blog.bitsrc.io/reusable-components-in-react-a-practical-guide-ec15a81a4d71)
+  [Naming components](https://medium.com/@wittydeveloper/react-components-naming-convention-%EF%B8%8F-b50303551505)
 
 ## :white_medium_square: Todos:
 - [x] ~~Create table of contents~~
